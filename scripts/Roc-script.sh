@@ -65,6 +65,9 @@ git clone --depth=1 https://github.com/gdy666/luci-app-lucky package/luci-app-lu
 # git clone --depth=1 https://github.com/laipeng668/luci-app-gecoosac package/luci-app-gecoosac
 # git clone --depth=1 https://github.com/NONGFAH/luci-app-athena-led package/luci-app-athena-led
 # chmod +x package/luci-app-athena-led/root/etc/init.d/athena_led package/luci-app-athena-led/root/usr/sbin/athena-led
+# 集成 iStore 软件中心及配套界面
+git clone --depth=1 https://github.com/linkease/istore.git package/istore
+git clone --depth=1 https://github.com/linkease/istore-ui.git package/istore-ui
 
 ### PassWall & OpenClash ###
 
