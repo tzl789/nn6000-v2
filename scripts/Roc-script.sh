@@ -65,9 +65,7 @@ git clone --depth=1 https://github.com/gdy666/luci-app-lucky package/luci-app-lu
 # git clone --depth=1 https://github.com/laipeng668/luci-app-gecoosac package/luci-app-gecoosac
 # git clone --depth=1 https://github.com/NONGFAH/luci-app-athena-led package/luci-app-athena-led
 # chmod +x package/luci-app-athena-led/root/etc/init.d/athena_led package/luci-app-athena-led/root/usr/sbin/athena-led
-# 集成 iStore 软件中心及配套界面
-git clone --depth=1 https://github.com/linkease/istore.git package/istore
-git clone --depth=1 https://github.com/linkease/istore-ui.git package/istore-ui
+
 
 ### PassWall & OpenClash ###
 
@@ -84,6 +82,10 @@ git clone --depth=1 https://github.com/vernesong/OpenClash package/luci-app-open
 
 # 清理 PassWall 的 chnlist 规则文件
 echo "baidu.com"  > package/luci-app-passwall/luci-app-passwall/root/usr/share/passwall/rules/chnlist
+
+# 将 iStore 添加到附加 feeds 源中
+echo 'src-git istore https://github.com/linkease/istore.git' >> feeds.conf.default
+echo 'src-git istore_ui https://github.com/linkease/istore-ui.git' >> feeds.conf.default
 
 ./scripts/feeds update -a
 ./scripts/feeds install -a
