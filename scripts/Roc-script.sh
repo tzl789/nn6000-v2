@@ -82,10 +82,3 @@ git clone --depth=1 https://github.com/vernesong/OpenClash package/luci-app-open
 
 # 清理 PassWall 的 chnlist 规则文件
 echo "baidu.com"  > package/luci-app-passwall/luci-app-passwall/root/usr/share/passwall/rules/chnlist
-
-# 将 iStore 添加到附加 feeds 源中
-echo 'src-git istore https://github.com/linkease/istore.git' >> feeds.conf.default
-echo 'src-git istore_ui https://github.com/linkease/istore-ui.git' >> feeds.conf.default
-
-./scripts/feeds update -a
-./scripts/feeds install -a
