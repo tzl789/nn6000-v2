@@ -96,10 +96,10 @@ jobs:
     - name: Install Feeds(安装feeds)
       run: |
         cd $OPENWRT_PATH
-        echo 'src-git istore https://github.com/linkease/istore.git' >> feeds.conf.default
-        echo 'src-git istore_ui https://github.com/linkease/istore-ui.git' >> feeds.conf.default
+        echo >> feeds.conf.default
+        echo 'src-git istore https://github.com/linkease/istore;main' >> feeds.conf.default
         ./scripts/feeds update -a
-        ./scripts/feeds install -a
+        ./scripts/feeds install -d y -p istore luci-app-store
   
     - name: Load Custom Configuration(加载自定义配置)
       run: |
