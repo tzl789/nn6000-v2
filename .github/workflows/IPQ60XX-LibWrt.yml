@@ -117,7 +117,10 @@ jobs:
     - name: Clean Build Directory(清理构建目录)
       run: |
         cd $OPENWRT_PATH
-        rm -rf build_dir/target-* target/linux/*/build
+        rm -rf build_dir/target-aarch64_cortex-a53_musl/linux-qualcommax_ipq60xx
+        rm -rf staging_dir/target-aarch64_cortex-a53_musl
+        rm -rf logs/target-aarch64_cortex-a53_musl
+        rm -rf .ccache
         make clean || true
 
     - name: Compile Firmware(开始编译固件)
