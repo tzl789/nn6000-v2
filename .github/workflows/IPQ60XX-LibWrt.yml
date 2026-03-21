@@ -114,6 +114,12 @@ jobs:
         make defconfig
         make download -j$(nproc)
 
+    - name: Clean Build Directory(清理构建目录)
+      run: |
+        cd $OPENWRT_PATH
+        rm -rf build_dir/target-* target/linux/*/build
+        make clean || true
+
     - name: Compile Firmware(开始编译固件)
       id: compile
       run: |
