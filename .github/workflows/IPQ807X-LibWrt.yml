@@ -7,7 +7,7 @@ on:
   #   - cron: 0 20 * * *
 
 env:
-  REPO_URL: https://github.com/laipeng668/openwrt-6.x.git
+  REPO_URL: https://github.com/tzl789/openwrt-6.x-me.git
   REPO_BRANCH: main-nss
   CONFIG_FILE: configs/IPQ807X.config
   GENERAL_CONFIG_FILE: configs/General.config
@@ -152,7 +152,7 @@ jobs:
           - 💻 这是 ${{ env.FIRMWARE_TAG }} 平台使用的 OpenWrt 固件
           - ⚽ 固件源码: ${{ env.REPO_URL }}
           - 💝 源码分支: ${{ env.REPO_BRANCH }}
-          - 🌐 默认地址: **192.168.2.1**
+          - 🌐 默认地址: **192.168.7.1**
           - 🔑 默认密码: none
           ### 🧊 固件版本
           - 固件内核版本：**${{ env.VERSION_KERNEL }}**
