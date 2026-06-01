@@ -66,21 +66,20 @@ git clone --depth=1 https://github.com/laipeng668/luci-app-gecoosac package/luci
 git clone --depth=1 https://github.com/NONGFAH/luci-app-athena-led package/luci-app-athena-led
 chmod +x package/luci-app-athena-led/root/etc/init.d/athena_led package/luci-app-athena-led/root/usr/sbin/athena-led
 
-### PassWall & OpenClash ###
+### PassWall2 & OpenClash & Nikki ###
 
 # 移除 OpenWrt Feeds 自带的核心库
 rm -rf feeds/packages/net/{xray-core,v2ray-geodata,sing-box,chinadns-ng,dns2socks,hysteria,ipt2socks,microsocks,naiveproxy,shadowsocks-libev,shadowsocks-rust,shadowsocksr-libev,simple-obfs,tcping,trojan-plus,tuic-client,v2ray-plugin,xray-plugin,geoview,shadow-tls}
 git clone --depth=1 https://github.com/Openwrt-Passwall/openwrt-passwall-packages package/passwall-packages
 
-# 移除 OpenWrt Feeds 过时的LuCI版本
+# 移除 OpenWrt Feeds 过时的 LuCI 版本
 rm -rf feeds/luci/applications/luci-app-passwall
+rm -rf feeds/luci/applications/luci-app-passwall2
 rm -rf feeds/luci/applications/luci-app-openclash
-git clone --depth=1 https://github.com/Openwrt-Passwall/openwrt-passwall package/luci-app-passwall
+rm -rf package/OpenWrt-nikki
 git clone --depth=1 https://github.com/Openwrt-Passwall/openwrt-passwall2 package/luci-app-passwall2
 git clone --depth=1 https://github.com/vernesong/OpenClash package/luci-app-openclash
-
-# 清理 PassWall 的 chnlist 规则文件
-echo "baidu.com"  > package/luci-app-passwall/luci-app-passwall/root/usr/share/passwall/rules/chnlist
+git clone --depth=1 https://github.com/nikkinikki-org/OpenWrt-nikki package/OpenWrt-nikki
 
 ./scripts/feeds update -a
 ./scripts/feeds install -a
